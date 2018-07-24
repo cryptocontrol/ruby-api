@@ -6,6 +6,7 @@ Gem::Specification.new do |s|
   s.email       = ["enamakel@cryptocontrol.io"]
   s.homepage    = "http://github.com/carlhuda/newgem"
   s.summary     = "Crypto News API"
+  s.license     = "Apache-2.0"
   s.description = "Client to get a crypto newsfeed in your app from the CryptoControl API"
 
   s.required_rubygems_version = ">= 1.3.6"
