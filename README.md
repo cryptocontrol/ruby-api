@@ -5,45 +5,41 @@ Official Ruby client for the [CryptoControl.io](https://cryptocontrol.io) API. T
 
 ## Installation
 ```sh
-gem install crypto-news-api
+gem "crypto-news-api"
 ```
 
 ## Usage
 First make sure that you've recieved an API key by visiting [https://cryptocontrol.io/apis](https://cryptocontrol.io/apis). With the API key you can write the following code.
 
 
-```python
-from crypto_news_api import CryptoControlAPI
+```ruby
+require "crypto-news-api"
 
-# Connect to the CryptoControl API
-api = CryptoControlAPI("API_KEY_HERE")
-
-# Connect to a self-hosted proxy server (to improve performance) that points to cryptocontrol.io
-proxyApi = CryptoControlAPI("API_KEY_HERE", "http://cryptocontrol_proxy/api/v1/public")
+api = CryptoControl::QueryAPI.new("API_KEY_HERE")
 
 # Get top news
-print(api.getTopNews())
+puts api.getTopNews
 
 # get latest russian news
-print(api.getLatestNews("ru"))
+puts api.getLatestNews "ru"
 
 # get top bitcoin news
-print(api.getTopNewsByCoin("bitcoin"))
+puts api.getTopNewsByCoin "bitcoin"
 
 # get top EOS tweets
-print(api.getTopTweetsByCoin("eos"))
+puts api.getTopTweetsByCoin "eos"
 
 # get top Ripple reddit posts
-print(api.getLatestRedditPostsByCoin("ripple"))
+puts api.getLatestRedditPostsByCoin "ripple"
 
 # get reddit/tweets/articles in a single combined feed for NEO
-print(api.getTopFeedByCoin("neo"))
+puts api.getTopFeedByCoin "neo"
 
 # get latest reddit/tweets/articles (seperated) for Litecoin
-print(api.getLatestItemsByCoin("litecoin"))
+puts api.getLatestItemsByCoin "litecoin"
 
 # get details (subreddits, twitter handles, description, links) for ethereum
-print(api.getCoinDetails("ethereum"))
+puts api.getCoinDetails "ethereum"
 
 ```
 
