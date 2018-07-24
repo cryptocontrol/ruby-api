@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   s.name        = "crypto-news-api"
-  s.version     = "1.0.0"
+  s.version     = "1.0.1"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Steven Enamakel"]
   s.email       = ["enamakel@cryptocontrol.io"]
-  s.homepage    = "http://github.com/carlhuda/newgem"
+  s.homepage    = "http://github.com/cryptocontrol/ruby-api"
   s.summary     = "Crypto News API"
   s.license     = "Apache-2.0"
   s.description = "Client to get a crypto newsfeed in your app from the CryptoControl API"
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
 
   # lol - required for validation
-  s.rubyforge_project         = "newgem"
+  s.rubyforge_project         = "crypto-news-api"
 
   # If you have other dependencies, add them here
   # s.add_dependency "another", "~> 1.2"
@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
 
   # If you need an executable, add it here
-  # s.executables = ["newgem"]
+  # s.executables = ["crypto-news-api"]
 
   # If you have C extensions, uncomment this line
   # s.extensions = "ext/extconf.rb"
