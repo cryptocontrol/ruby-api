@@ -9,13 +9,14 @@ module CryptoControl
     def initialize(apiKey, proxyURL = nil)
       @apiKey = apiKey
       @proxyURL = proxyURL
+      @Sentiment = false
     end
 
 
     def fetch (url)
       host = @proxyURL ? @proxyURL : 'https://cryptocontrol.io/api/v1/public'
-      url = URI.parse("#{host}#{url}")
-
+      sentiment = "sentiment=#{@Sentiment}"
+      url = URI.parse("#{host}#{url}#{url.include?("?") ? "&" : "?" }#{sentiment}")
       https = Net::HTTP.new(url.host, url.port)
       https.use_ssl = true
 
@@ -27,6 +28,11 @@ module CryptoControl
       req = Net::HTTP::Get.new(url.to_s, initheader = headers)
       res = https.request(req)
       JSON.parse(res.body)
+    end
+
+
+    def enableSentiment()
+      @Sentiment = true
     end
 
 
