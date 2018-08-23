@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "crypto-news-api"
-  s.version     = "1.0.1"
+  s.version     = "1.3.0"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Steven Enamakel"]
   s.email       = ["enamakel@cryptocontrol.io"]

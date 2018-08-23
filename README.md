@@ -17,6 +17,9 @@ require "crypto-news-api"
 
 api = CryptoControl::QueryAPI.new("API_KEY_HERE")
 
+# Enable the sentiment datapoints
+api.enableSentiment
+
 # Get top news
 puts api.getTopNews
 
@@ -61,9 +64,20 @@ puts api.getCoinDetails "ethereum"
 - **getLatestItemsByCoin(coin: String, lang?: enum)** Get reddit/tweets/articles (seperated) for a particular coin (sorted by relevance)
 - **getCoinDetails(coin: String)** Get all details about a particular coin (links, description, subreddits, twitter etc..)
 
-`lang` allows developers to choose which language they'd like to get the feed. Currently CryptoControl supports English (`en`) and Russian (`ru`) article feeds.
+`lang` allows developers to choose which language they'd like to get the feed. Currently the CryptoControl API supports the following languages:
+- English (`en` default)
+- Chinese/Mandarin (`cn`)
+- German (`de`)
+- Italian (`it`)
+- Japanese (`jp`)
+- Korean (`ko`)
+- Portuguese (`po`)
+- Russian (`ru`)
+- Spanish (`es`)
 
 The coin slugs are the coin id's used from the CoinMarketCap api. You can see the full list of coins here: [https://api.coinmarketcap.com/v1/ticker/?limit=2000](https://api.coinmarketcap.com/v1/ticker/?limit=2000)
+
+`enableSentiment()` will tell CrpytoControl to return articles/reddit/twitter with sentiment datapoints as well (ie. how much +ve/-ve an article is). This feature is for [CryptoControl premium users](https://cryptocontrol.io/en/about/premium) only.
 
 ## Sample response from the server
 

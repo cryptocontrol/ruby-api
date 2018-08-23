@@ -9,18 +9,19 @@ module CryptoControl
     def initialize(apiKey, proxyURL = nil)
       @apiKey = apiKey
       @proxyURL = proxyURL
-      @Sentiment = false
+      @sentiment = false
     end
 
 
     def fetch (url)
       host = @proxyURL ? @proxyURL : 'https://cryptocontrol.io/api/v1/public'
-      sentiment = "sentiment=#{@Sentiment}"
+      sentiment = "sentiment=#{@sentiment}"
       url = URI.parse("#{host}#{url}#{url.include?("?") ? "&" : "?" }#{sentiment}")
       https = Net::HTTP.new(url.host, url.port)
       https.use_ssl = true
 
       headers = {
+        'user-agent' => 'CryptoControl Ruby API v1.2.0',
         'content-type' =>'application/json',
         'x-api-key' => @apiKey
       }
@@ -32,7 +33,7 @@ module CryptoControl
 
 
     def enableSentiment()
-      @Sentiment = true
+      @sentiment = true
     end
 
 
