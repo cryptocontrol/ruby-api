@@ -63,6 +63,7 @@ puts api.getCoinDetails "ethereum"
 - **getTopItemsByCoin(coin: String, lang?: enum)** Get reddit/tweets/articles (seperated) for a particular coin (sorted by time)
 - **getLatestItemsByCoin(coin: String, lang?: enum)** Get reddit/tweets/articles (seperated) for a particular coin (sorted by relevance)
 - **getCoinDetails(coin: String)** Get all details about a particular coin (links, description, subreddits, twitter etc..)
+- **enableSentiment()** Get the sentiment datapoints
 
 `lang` allows developers to choose which language they'd like to get the feed. Currently the CryptoControl API supports the following languages:
 - English (`en` default)
